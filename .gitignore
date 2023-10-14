@@ -1,0 +1,77 @@
+public partial class Form1 : Form
+{
+Random r = new Random(); 
+int a, b, i, puan;
+ 
+public Form1()
+{
+InitializeComponent();
+}
+ 
+private void Form1_Load(object sender, EventArgs e)
+{
+timer1.Enabled = false;
+ 
+}
+ 
+private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+{
+ 
+a = r.Next(300);
+b = r.Next(300); 
+ 
+pictureBox1.Location = new System.Drawing.Point(a, b);
+ 
+label2.Text = puan.ToString();
+puan = puan + 1; 
+ 
+}
+ 
+private void timer1_Tick(object sender, EventArgs e)
+{
+ 
+i = i + 1; 
+if (i == 2) 
+{
+pictureBox1.Location = new System.Drawing.Point(a,b);
+b = r.Next(300);
+a = r.Next(300); 
+ 
+i = 0; 
+ 
+}
+}
+ 
+private void button1_Click(object sender, EventArgs e)
+{
+timer1.Enabled = true; 
+ 
+}
+ 
+private void easyToolStripMenuItem_Click(object sender EventArgs e)
+{
+ 
+timer1.Interval = 1000;
+ 
+}
+ 
+private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
+{
+ 
+timer1.Interval = 300; 
+ 
+}
+ 
+private void hardToolStripMenuItem_Click(object sender, EventArgs e)
+{
+ 
+timer1.Interval = 100; 
+ 
+}
+ 
+private void button2_Click(object sender, EventArgs e)
+{
+timer1.Enabled = false; // Durdur Butonuna Tıkladıgımızda Timer1 Pasif Duruma Gelir ve Programımız Durdurulur.
+}
+}
+} 
